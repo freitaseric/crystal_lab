@@ -1,8 +1,9 @@
-available_chars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "@", "%", "$", "&", "!", "*", "?"]
+chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a + %w(! @ # $ % ^ & *)
 
 print "Password Length: "
-length = gets.to_s.strip.to_i
+input = gets
+length = (input && !input.strip.empty?) ? input.strip.to_i : 8
 
-password = Array.new(length) { available_chars.sample }.join
+password = Array.new(length) { chars.sample }.join
 
 puts "Your super secure password is: #{password}"

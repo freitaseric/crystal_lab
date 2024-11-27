@@ -1,0 +1,14 @@
+name: crystal_lab
+version: 0.1.0
+
+authors:
+  - Eric Freitas <freitaseric@proton.me>
+
+crystal: '>= 1.14.0'
+
+license: MIT
+
+dependencies:
+  ameba:
+    github: crystal-ameba/ameba
+    version: ~> 1.6.4
